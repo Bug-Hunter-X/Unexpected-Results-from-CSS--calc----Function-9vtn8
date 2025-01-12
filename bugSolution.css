@@ -1,0 +1,12 @@
+/* bugSolution.css */
+
+/* Instead of trying to set a negative value using calc(), we handle this situation by checking for valid results before applying the calculated value.  If it's negative, we set a minimum value (or handle it in a more suitable way for your application) */
+
+.element {
+  width: clamp(100px, calc(100vw - 50px), 800px);
+  /*Using clamp() to prevent negative values */
+  height: clamp(50px, calc(100vh - 100px), 500px);
+  /*Using clamp() to prevent negative values */
+}
+
+/* This ensures we always have positive values for width and height, regardless of the viewport size.  It’s crucial to adjust clamp's min, pref, and max values to fit your design needs. */
